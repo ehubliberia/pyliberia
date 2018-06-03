@@ -1,5 +1,8 @@
-from django.shortcuts import render
-from .models import about 
+from django.shortcuts import render 
+from about.models import about 
+from projects.models import project
+from constitution.models import const
+from coc.models import coc
 
 def about_post(request):
 	post = about.objects.all()
