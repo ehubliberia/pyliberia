@@ -23,10 +23,11 @@
   <div class="row">
     <!-- First column  -->
     <div class="col-md-5" >
-      <center> <h1><i class="fab fa-python"></i> ABOUT </h1></center>
+      {% for p in post %}
+      <center> <h1><i class="fab fa-python"></i> {{p.About_Title}} </h1></center>
       <br />
-      <p>The Python Users Nigeria Group (Python Nigeria) is a body that encompasses all friends of the Python programming language in the Nigerian environ. <br /><br />
-      The community is open to everyone at all levels. So whether you are resident in Nigeria or outside the country, an absolute beginner or a maestro, program in Python or other languages but have some interest in Python, our community will embrace you. We have an active Slack team, where we engage ourselves regularly. You can check out our Github page for projects we have or are working on.</p>
+      <p>{{p.Body}}</p>
+      {% endfor %}
     </div>
     <!-- Divisor -->
     <div class="col-md-1">
@@ -35,20 +36,24 @@
 
     <!-- second column  -->
         <div class="col-md-5" >
-      <center><h1><i class="fas fa-toolbox"></i>  PROJECTS </h1></center>
+          {% for r in proj %}
+      <center><h1><i class="fas fa-toolbox"></i>  {{r.Project_Title}} </h1></center>
             <br />
-      <p> Here we highlight all the major projects the Python Nigeria community are a part of and supports. Please note that members who take part in these projects do so voluntarily without any remuneration. The community as a whole benefits and are proud of all the collective efforts and man hours put into such projects to make it a success fostering growth. </p>
+      <p> {{r.Project_Body}} </p>
       <a href="{% url 'projects' %}" class="btn btn-lg btn-outline-primary"> PROJECTS </a>
+    {% endfor %}
     </div>
 
         <!-- third column  -->
         <div class="col-md-5" >
-      <center> <h1> <i class="fas fa-newspaper"></i> CODE OF CONDUCT </h1></center>
+          {% for c in coc_lst %}
+      <center> <h1> <i class="fas fa-newspaper"></i> {{c.Coc_Title}} </h1></center>
             <br />
       <p>
-        The Nigerian Python community is made up of members from around Nigeria with very diverse set of skills, personalities, cultures and experiences. It is through these differences that our community has experienced many successes and continued growth. When you're working with members of the community, we encourage you to follow these guidelines which help steer our interactions and strive to keep Python a positive, successful, and growing community. A member of the Nigeria Python community is:...
+        {{c.Coc_Body}}
       </p>
         <a href="{% url 'coc' %}" class="btn btn-lg btn-outline-primary"> CODE OF CONDUCT </a>
+        {% endfor %}
     </div>
     <!-- Divisor -->
     <div class="col-md-1">
@@ -56,10 +61,12 @@
     <!-- divisor ends -->
         <!-- fourth column  -->
         <div class="col-md-5" >
-      <center> <h1><i class="fas fa-book"></i> CONSTITUTION </h1></center>
+          {% for d in constit %}
+      <center> <h1><i class="fas fa-book"></i> {{d.Constitution_Title}} </h1></center>
             <br />
-      <p>The Python Nigeria Community is governed by constitution. The details are as follows....</p>
+      <p>{{d.Constitution_Body}}</p>
         <a href="{% url 'constitution' %}" class="btn btn-lg btn-outline-primary"> CONSTITUTION </a>
+      {% endfor %}
     </div>
   </div>
 </div>

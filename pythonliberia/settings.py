@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'about', 
     'coc', 
     'constitution',
-     'whitenoise.runserver_nostatic', # new! 
+    'whitenoise.runserver_nostatic', # new! 
 ]
 
 MIDDLEWARE = [
