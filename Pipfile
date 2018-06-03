@@ -6,6 +6,7 @@ verify_ssl = true
 [packages]
 gunicorn = "*"
 django = "*"
+whitenoise = "*"
 
 [dev-packages]
 
