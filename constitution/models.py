@@ -6,3 +6,10 @@ class const(models.Model):
 
 	def __str__(self):
 		return self.Constitution_Title
+
+class constitution(models.Model):
+	Title = models.CharField(max_length=150)
+	Body = models.TextField()
+
+	def __str__(self):
+		return self.Title 
