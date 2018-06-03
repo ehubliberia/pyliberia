@@ -26,7 +26,7 @@
       {% for p in post %}
       <center> <h1><i class="fab fa-python"></i> {{p.About_Title}} </h1></center>
       <br />
-      <p>{{p.Body}}</p>
+      <p>{{p.Body|safe|linkbreaks}}</p>
       {% endfor %}
     </div>
     <!-- Divisor -->
@@ -39,7 +39,7 @@
           {% for r in proj %}
       <center><h1><i class="fas fa-toolbox"></i>  {{r.Project_Title}} </h1></center>
             <br />
-      <p> {{r.Project_Body}} </p>
+      <p> {{r.Project_Body|safe|linkbreaks}} </p>
       <a href="{% url 'projects' %}" class="btn btn-lg btn-outline-primary"> PROJECTS </a>
     {% endfor %}
     </div>
@@ -50,7 +50,7 @@
       <center> <h1> <i class="fas fa-newspaper"></i> {{c.Coc_Title}} </h1></center>
             <br />
       <p>
-        {{c.Coc_Body}}
+        {{c.Coc_Body|safe|linkbreaks}}
       </p>
         <a href="{% url 'coc' %}" class="btn btn-lg btn-outline-primary"> CODE OF CONDUCT </a>
         {% endfor %}
@@ -64,7 +64,7 @@
           {% for d in constit %}
       <center> <h1><i class="fas fa-book"></i> {{d.Constitution_Title}} </h1></center>
             <br />
-      <p>{{d.Constitution_Body}}</p>
+      <p>{{d.Constitution_Body|safe|linkbreaks}}</p>
         <a href="{% url 'constitution' %}" class="btn btn-lg btn-outline-primary"> CONSTITUTION </a>
       {% endfor %}
     </div>
