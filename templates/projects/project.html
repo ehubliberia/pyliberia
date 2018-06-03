@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+Python Liberia Project
+{% endblock title %}
+    {% block description %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keyword" content="Python Liberia Projects">
+    <meta name="description" content="Full list of Python Liberia Projects">
+   <meta author="Innovation Team" content="Project done by Innovation Team - Easy Tech">
+    {% endblock description %}
+{% load static %}
+{% block proj_css %}
+<link rel="stylesheet" href="{% static 'css/project/default.css' %}">
+{% endblock proj_css %}
+
+{% block content %}
+<div class="container">
+	<h1> Our Projects </h1>
+	<p>Here we highlight all the major projects the Python Nigeria community are a part of and supports. Please note that members who take part in these projects do so voluntarily without any remuneration. The community as a whole benefits and are proud of all the collective efforts and man hours put into such projects to make it a success fostering growth.</p>
+</div>
+<div class="container">
+	<div class="row">
+		<!-- first post -->
+		{% for post in object_list %}
+		<div class="col-md-11 single_post">
+			<h1> <a href="{% url 'full_post' post.pk %}"> {{post.Title}} </a> </h1>
+			<p> This event will be starting @: {{post.Event_Start}} </p>
+			<p> and will be ending @: {{post.Event_End}} </p>
+			<p>
+			{{post.Body|safe|linebreaks}}
+			</p>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock content %}
+

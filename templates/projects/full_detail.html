@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+    {% block description %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keyword" content="Python Liberia Project Details ">
+    <meta name="description" content="The full details of Python Liberia Projects">
+    <meta author="Innovation Team" content="Project done by Innovation Team - Easy Tech">
+    {% endblock description %}
+{% block title %}
+Python Liberia Project Detail
+{% endblock title %}
+{% load static %}
+{% block proj_css %}
+<link rel="stylesheet" href="{% static 'css/project/default.css' %}">
+{% endblock proj_css %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<!-- first post -->
+		<div class="col-md-11 single_post">
+			<h1> <a href="#"> {{object.Title}} </a> </h1>
+			<p> This event will be starting @: {{object.Event_Start}} </p>
+			<p> and will be ending @: {{object.Event_End}} </p>
+			<p>
+			{{object.Body|safe|linebreaks}}
+			</p>
+			<a href="{% url 'projects' %}" class="btn btn-lg btn-outline-primary"> <i class="fas fa-chevron-circle-left"></i> Back </a>
+		</div>
+	</div>
+</div>
+{% endblock content %}
+

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+    {% block description %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keyword" content="Python Liberia">
+    <meta name="description" content="Python Liberia Official Site">
+    <meta author="Innovation Team" content="Project done by Innovation Team - Easy Tech">
+    {% endblock description %}
+{% load static %}
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'css/default.css' %}" type="text/css">
+{% endblock custom_css %}
+{% block head %}
+<div class="head-text">
+  <h1> WELCOME TO PYTHON LIBERIA  </h1>
+  <br />
+  <p> Liberia first python programmers group </p> 
+  <br />
+  <p> Join our Slack Channel: </p>
+  <a class="btn btn-lg btn-primary" href="https://py-liberia.herokuapp.com/" target="_blank"> JOIN US ON SLACK </a> 
+</div>
+{% endblock head %}
+{% block content %}
+<div class="container info-container">
+  <div class="row">
+    <!-- First column  -->
+    <div class="col-md-5" >
+      <center> <h1><i class="fab fa-python"></i> ABOUT </h1></center>
+      <br />
+      <p>The Python Users Nigeria Group (Python Nigeria) is a body that encompasses all friends of the Python programming language in the Nigerian environ. <br /><br />
+      The community is open to everyone at all levels. So whether you are resident in Nigeria or outside the country, an absolute beginner or a maestro, program in Python or other languages but have some interest in Python, our community will embrace you. We have an active Slack team, where we engage ourselves regularly. You can check out our Github page for projects we have or are working on.</p>
+    </div>
+    <!-- Divisor -->
+    <div class="col-md-1">
+    </div>
+    <!-- divisor ends -->
+
+    <!-- second column  -->
+        <div class="col-md-5" >
+      <center><h1><i class="fas fa-toolbox"></i>  PROJECTS </h1></center>
+            <br />
+      <p> Here we highlight all the major projects the Python Nigeria community are a part of and supports. Please note that members who take part in these projects do so voluntarily without any remuneration. The community as a whole benefits and are proud of all the collective efforts and man hours put into such projects to make it a success fostering growth. </p>
+      <a href="{% url 'projects' %}" class="btn btn-lg btn-outline-primary"> PROJECTS </a>
+    </div>
+
+        <!-- third column  -->
+        <div class="col-md-5" >
+      <center> <h1> <i class="fas fa-newspaper"></i> CODE OF CONDUCT </h1></center>
+            <br />
+      <p>
+        The Nigerian Python community is made up of members from around Nigeria with very diverse set of skills, personalities, cultures and experiences. It is through these differences that our community has experienced many successes and continued growth. When you're working with members of the community, we encourage you to follow these guidelines which help steer our interactions and strive to keep Python a positive, successful, and growing community. A member of the Nigeria Python community is:...
+      </p>
+        <a href="{% url 'coc' %}" class="btn btn-lg btn-outline-primary"> CODE OF CONDUCT </a>
+    </div>
+    <!-- Divisor -->
+    <div class="col-md-1">
+    </div>
+    <!-- divisor ends -->
+        <!-- fourth column  -->
+        <div class="col-md-5" >
+      <center> <h1><i class="fas fa-book"></i> CONSTITUTION </h1></center>
+            <br />
+      <p>The Python Nigeria Community is governed by constitution. The details are as follows....</p>
+        <a href="{% url 'constitution' %}" class="btn btn-lg btn-outline-primary"> CONSTITUTION </a>
+    </div>
+  </div>
+</div>
+{% endblock content %}

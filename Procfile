@@ -1,0 +1,1 @@
+web: gunicorn pythonliberia.wsgi --log-file -
